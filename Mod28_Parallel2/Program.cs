@@ -9,8 +9,8 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        int arrayLength = 100_000;
-        int[] array = Enumerable.Repeat(1, arrayLength).ToArray();
+        int arrayLength = 1_000_000;
+        int[] array = Enumerable.Range(1, arrayLength).Select (_ => Random.Shared.Next(0,10)).ToArray();
         Console.WriteLine($"Calculating sum for array containing {arrayLength:n0}");
 
         for (int iteration = 0; iteration < 5; iteration++)
